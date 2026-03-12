@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Namah Group</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Syncopate:wght@400;700&family=Manrope:wght@200;400;600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                        display: ['Syncopate', 'sans-serif'],
+                    },
+                    colors: {
+                        gold: '#D4AF37',
+                        neon: '#00f3ff',
+                        'dark-bg': '#050507',
+                        'card-bg': 'rgba(20, 20, 25, 0.6)'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-dark-bg text-white antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 border-b border-white/5 bg-black/50 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="flex flex-col">
+                <span class="font-display font-bold text-xl tracking-widest text-white">NAMAH GROUP</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-xs font-bold tracking-[0.2em] uppercase">
+                <a href="index.html" class="hover:text-white/70 transition-colors">Return Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 pt-40 pb-32 min-h-screen">
+        <h1 class="font-serif text-5xl md:text-6xl text-gold mb-12">Connect <span class="text-white">.</span></h1>
+
+        <div class="grid md:grid-cols-2 gap-16 text-white/70 font-light">
+
+            <div class="space-y-8">
+                <div>
+                    <h2 class="font-display text-sm tracking-widest text-white mb-2">Corporate Headquarters</h2>
+                    <address class="not-italic leading-relaxed">
+                        Namah Group Product & Services (OPC) Pvt Ltd<br>
+                        Flat No. F-306, Keerthi Chalet, Horamavu<br>
+                        Bangalore, Karnataka - 560043, India
+                    </address>
+                </div>
+
+                <div>
+                    <h2 class="font-display text-sm tracking-widest text-white mb-2">General Inquiries</h2>
+                    <a href="mailto:connect@namahgroupindia.com"
+                        class="text-blue-400 hover:text-white transition-colors border-b border-blue-500/30 pb-1">
+                        connect@namahgroupindia.com
+                    </a>
+                    <p class="mt-2">Phone: +91 9012558226</p>
+                </div>
+
+                <div>
+                    <h2 class="font-display text-sm tracking-widest text-white mb-2">Corporate Information</h2>
+                    <p>CIN: U20237KA2025OPC210347</p>
+                    <p>GSTIN: 29AAKCN9803B1ZC</p>
+                </div>
+            </div>
+
+            <div class="bg-card-bg border border-white/5 p-8 backdrop-blur-sm">
+                <h2 class="font-display text-lg tracking-widest text-gold mb-6 border-b border-white/10 pb-4">Grievance
+                    Redressal</h2>
+                <p class="mb-6 text-sm leading-relaxed">In accordance with the Information Technology Act, 2000, and the
+                    rules made thereunder, any grievances or discrepancies related to data processing, payments, or
+                    services may be addressed to our Grievance Officer.</p>
+
+                <div class="space-y-2 text-sm">
+                    <p><strong class="text-white">Name:</strong> <span>Sakshi Varshney</span></p>
+                    <p><strong class="text-white">Designation:</strong> Compliance & Grievance Officer</p>
+                    <p><strong class="text-white">Email:</strong> <a href="mailto:grievance@namahgroupindia.com"
+                            class="text-blue-400 hover:text-white">grievance@namahgroupindia.com</a></p>
+                    <p><strong class="text-white">Resolution Time:</strong> We aim to acknowledge complaints within
+                        24-48 hours and resolve them within 15 days.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer / Global Sitemap -->
+    <footer id="footer" class="bg-black text-white pt-24 pb-12 px-6 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Column 1: HQ & Contact -->
+                <div>
+                    <h4
+                        class="text-white font-bold tracking-widest uppercase mb-6 text-xs border-b border-white/10 pb-2">
+                        HQ & Contact</h4>
+                    <p class="text-white font-serif text-xl mb-4">Namah Group Product & Services (OPC) Pvt Ltd</p>
+                    <address class="not-italic text-white/50 text-sm leading-relaxed mb-6">
+                        Flat No. F-306, Keerthi Chalet, Horamavu<br>
+                        Bangalore, Karnataka - 560043, India<br>
+                        Phone: +91 9012558226
+                    </address>
+                    <a href="mailto:connect@namahgroupindia.com"
+                        class="text-sm text-blue-400 hover:text-white transition-colors border-b border-blue-500/30 pb-1">
+                        connect@namahgroupindia.com
+                    </a>
+                </div>
+
+                <!-- Column 2: Business Verticals -->
+                <div>
+                    <h4
+                        class="text-white font-bold tracking-widest uppercase mb-6 text-xs border-b border-white/10 pb-2">
+                        Business Verticals</h4>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <li><a href="index.html#wellness" class="hover:text-gold transition-colors">Seviorè Wellness</a>
+                        </li>
+                        <li><a href="index.html#quantum" class="hover:text-neon transition-colors">Quantum Systems & Deep Tech</a>
+                        </li>
+                        <li><a href="index.html#ai-engines" class="hover:text-blue-400 transition-colors">Enterprise AI Engines</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Corporate Info -->
+                <div>
+                    <h4
+                        class="text-white font-bold tracking-widest uppercase mb-6 text-xs border-b border-white/10 pb-2">
+                        Corporate Info</h4>
+                    <ul class="space-y-3 text-sm text-white/60 mb-6">
+                        <li><a href="about.html" class="hover:text-gold transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-gold transition-colors">Contact Us & Grievance</a>
+                        </li>
+                    </ul>
+                    <div class="text-xs text-white/40 space-y-1">
+                        <p>CIN: <span class="font-mono text-white/60">U20237KA2025OPC210347</span></p>
+                        <p>GSTIN: <span class="font-mono text-white/60">29AAKCN9803B1ZC</span></p>
+                    </div>
+                </div>
+
+                <!-- Column 4: Legal & Compliance -->
+                <div>
+                    <h4
+                        class="text-white font-bold tracking-widest uppercase mb-6 text-xs border-b border-white/10 pb-2">
+                        Legal & Compliance</h4>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <li><a href="privacy-policy.html" class="hover:text-gold transition-colors">Privacy Policy</a>
+                        </li>
+                        <li><a href="terms.html" class="hover:text-gold transition-colors">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html" class="hover:text-gold transition-colors">Cancellation & Refund
+                                Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-white/30">
+                <p>&copy; 2025 Namah Group Product & Services (OPC) Pvt Ltd. All Rights Reserved.</p>
+                <p>Designed for Humanity & Beyond.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
