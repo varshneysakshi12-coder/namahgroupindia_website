@@ -4,10 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn about Namah Group — a diversified conglomerate bridging luxury wellness, quantum innovation, and AI-powered platforms like Placement Pilot.">
     <title>About Us | Namah Group</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,400&family=Syncopate:wght@400;700&family=Manrope:wght@200;400;600&display=swap"
         rel="stylesheet">
@@ -22,17 +27,120 @@
                     },
                     colors: {
                         gold: '#D4AF37',
+                        'gold-light': '#F9E79F',
                         neon: '#00f3ff',
                         'dark-bg': '#050507',
+                        'card-bg': 'rgba(20, 20, 25, 0.6)'
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                     }
                 }
             }
         }
     </script>
+    <style>
+        body {
+            background-color: #050507;
+            color: white;
+        }
+
+        /* Subtle glow behind elements */
+        .glow-gold {
+            box-shadow: 0 0 40px -10px rgba(212, 175, 55, 0.15);
+        }
+
+        .glow-neon {
+            box-shadow: 0 0 40px -10px rgba(0, 243, 255, 0.15);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050507;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        /* Gradient Text */
+        .text-gradient-gold {
+            background: linear-gradient(to right, #D4AF37, #F9E79F, #D4AF37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* LinkedIn icon hover */
+        .linkedin-link {
+            transition: all 0.3s ease;
+        }
+
+        .linkedin-link:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.3);
+        }
+
+        /* Feature pill hover effect */
+        .feature-pill {
+            transition: all 0.3s ease;
+        }
+
+        .feature-pill:hover {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.4);
+            color: rgba(255, 255, 255, 0.7);
+        }
+    </style>
 </head>
 
-<body class="bg-dark-bg text-white antialiased overflow-x-hidden">
+<body class="antialiased overflow-x-hidden selection:bg-gold selection:text-black">
 
+    <!-- Animated Canvas Background -->
+    <canvas id="neuralCanvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-20"></canvas>
+
+    <!-- Navbar -->
     <nav class="fixed w-full z-50 border-b border-white/5 bg-black/50 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <a href="index.html" class="flex flex-col">
@@ -44,35 +152,247 @@
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-6 pt-40 pb-32 min-h-screen">
-        <h1 class="font-serif text-5xl md:text-6xl text-gold mb-12">About Us <span class="text-white">.</span></h1>
+    <!-- Hero / About Header -->
+    <section class="relative pt-40 pb-24 px-6">
+        <!-- Ambient Light Blurs -->
+        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-gold/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-blue-900/15 rounded-full blur-[120px]"></div>
 
-        <div class="prose prose-invert prose-lg text-white/70 font-light space-y-8">
-            <p class="text-xl text-white/90 italic font-serif">Bridging biological luxury and synthetic intelligence.
-            </p>
+        <main class="max-w-4xl mx-auto relative z-10">
+            <div class="fade-up">
+                <p class="text-xs font-bold tracking-[0.4em] text-white/40 uppercase mb-4">About Us</p>
+                <h1 class="font-serif text-5xl md:text-7xl text-white mb-4">About <span
+                        class="text-gradient-gold italic">Namah</span> <span class="text-gold">.</span></h1>
+                <p class="text-xl text-white/80 italic font-serif mb-12">Bridging biological luxury and synthetic
+                    intelligence.</p>
+            </div>
 
-            <p>Namah Group Product & Services (OPC) Pvt Ltd is an Indian diversified conglomerate operating at the
-                intersection of deep technology and elite wellness. Headquartered in Bangalore, the technology capital
-                of India, we are driven by a singular mission: to architect ecosystems that elevate human potential.</p>
+            <div class="space-y-8 fade-up delay-100">
+                <p class="text-white/60 leading-relaxed font-light text-lg">Namah Group Product & Services (OPC) Pvt
+                    Ltd is an Indian diversified conglomerate operating at the
+                    intersection of deep technology and elite wellness. Headquartered in Bangalore, the technology
+                    capital
+                    of India, we are driven by a singular mission: to architect ecosystems that elevate human potential.
+                </p>
 
-            <h2 class="font-display text-lg tracking-widest text-white pt-8">Our Divisions</h2>
+                <h2 class="font-display text-lg tracking-widest text-white pt-4">Our Divisions</h2>
 
-            <p><strong class="text-gold">Seviorè Wellness:</strong> Our luxury arm is dedicated to redefining botanical
-                purity. We source the highest grade, therapeutic botanical actives globally to create bio-formulations
-                grounded in dermatological science. Seviorè is about uncompromising quality, where nature meets the
-                rigors of modern science.</p>
+                <p class="text-white/60 leading-relaxed font-light text-lg"><strong class="text-gold">Seviorè
+                        Wellness:</strong> Our luxury arm is dedicated to redefining botanical
+                    purity. We source the highest grade, therapeutic botanical actives globally to create
+                    bio-formulations
+                    grounded in dermatological science. Seviorè is about uncompromising quality, where nature meets the
+                    rigors of modern science.</p>
 
-            <p><strong class="text-blue-400">Quantum & AI R&D:</strong> Our deep-tech division spearheads foundational
-                quantum-based research while developing intelligent SaaS applications. We engineer scalable platforms
-                that cater to the masses, adapting to diverse consumer and enterprise requirements.</p>
+                <p class="text-white/60 leading-relaxed font-light text-lg"><strong class="text-blue-400">Quantum & AI
+                        R&D:</strong> Our deep-tech division spearheads foundational
+                    quantum-based research while developing intelligent SaaS applications. We engineer scalable
+                    platforms
+                    that cater to the masses, adapting to diverse consumer and enterprise requirements.</p>
 
-            <h2 class="font-display text-lg tracking-widest text-white pt-8">Our Philosophy</h2>
+                <h2 class="font-display text-lg tracking-widest text-white pt-4">Our Philosophy</h2>
 
-            <p>Excellence is not an accident. Whether it is ensuring a 100% pure botanical extract or developing an
-                artificial intelligence model that perfectly mimics human reasoning, our approach remains uniform:
-                meticulous precision wrapped in effortless elegance.</p>
+                <p class="text-white/60 leading-relaxed font-light text-lg">Excellence is not an accident. Whether it is
+                    ensuring a 100% pure botanical extract or developing an
+                    artificial intelligence model that perfectly mimics human reasoning, our approach remains uniform:
+                    meticulous precision wrapped in effortless elegance.</p>
+            </div>
+        </main>
+    </section>
+
+    <!-- Placement Pilot Platform Section -->
+    <section id="placement-pilot"
+        class="relative py-32 px-6 bg-gradient-radial from-[#0a1120] to-[#050507] border-t border-white/5">
+        <!-- Grid overlay effect -->
+        <div class="absolute inset-0"
+            style="background-image: radial-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px); background-size: 40px 40px;">
         </div>
-    </main>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-up">
+                <span
+                    class="text-blue-400 text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">Flagship
+                    Platform</span>
+                <h2 class="font-display text-3xl md:text-5xl text-white mb-6">Placement Pilot</h2>
+                <p class="text-white/50 text-lg font-light">India's next-generation campus placement preparation
+                    ecosystem, powered by advanced AI.</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto fade-up delay-100">
+                <div
+                    class="bg-card-bg border border-white/5 backdrop-blur-sm p-8 md:p-14 hover:border-blue-500/50 transition duration-500 group relative overflow-hidden">
+
+                    <!-- Ambient Glow -->
+                    <div
+                        class="absolute -top-32 -right-32 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-0">
+                    </div>
+                    <div
+                        class="absolute -bottom-32 -left-32 w-64 h-64 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-0">
+                    </div>
+
+                    <div class="flex flex-col lg:flex-row items-center gap-12 relative z-10">
+
+                        <!-- Left: Logo & Live Badge -->
+                        <div class="flex-shrink-0 w-40 md:w-56 relative">
+                            <!-- Glowing dot indicating LIVE -->
+                            <div class="absolute -top-2 -right-2 flex items-center gap-2 z-20">
+                                <span class="relative flex h-2 w-2">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                </span>
+                                <span class="text-[9px] uppercase tracking-widest text-green-400 font-bold">Live</span>
+                            </div>
+
+                            <img src="./pp-logo.png" alt="Placement Pilot Logo"
+                                class="w-full drop-shadow-[0_0_15px_rgba(59,130,246,0.2)] group-hover:drop-shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all duration-500" />
+                        </div>
+
+                        <!-- Right: Info -->
+                        <div class="flex-1 text-center lg:text-left">
+                            <h3 class="font-serif text-3xl md:text-4xl text-white mb-4">Your Career Launchpad</h3>
+
+                            <p class="text-white/60 leading-relaxed mb-6 font-light text-lg">
+                                Placement Pilot is an elite assessment engine designed to bridge the gap between
+                                academic
+                                theory and corporate readiness. It empowers students and young professionals with
+                                hyper-realistic mock interviews, adaptive cognitive testing, and instantaneous CV
+                                diagnostics — preparing talent for the most demanding roles across industries.
+                            </p>
+
+                            <p class="text-white/50 leading-relaxed mb-8 font-light">
+                                Built on advanced AI, the platform delivers real-time voice-based interview simulations,
+                                personalized skill gap analysis, and actionable feedback to accelerate
+                                campus-to-corporate
+                                transitions. From aptitude mastery to interview excellence, Placement Pilot is the
+                                definitive preparation companion.
+                            </p>
+
+                            <!-- Feature Badges -->
+                            <div
+                                class="flex flex-wrap gap-3 justify-center lg:justify-start mb-8 text-[10px] uppercase tracking-widest text-white/40">
+                                <span
+                                    class="feature-pill border border-white/10 px-4 py-1.5 rounded-full bg-white/5">Real-time
+                                    Voice Intelligence</span>
+                                <span
+                                    class="feature-pill border border-white/10 px-4 py-1.5 rounded-full bg-white/5">Adaptive
+                                    Skill Mapping</span>
+                                <span
+                                    class="feature-pill border border-white/10 px-4 py-1.5 rounded-full bg-white/5">Instant
+                                    Cognitive Feedback</span>
+                                <span class="feature-pill border border-white/10 px-4 py-1.5 rounded-full bg-white/5">AI
+                                    Mock
+                                    Interviews</span>
+                                <span class="feature-pill border border-white/10 px-4 py-1.5 rounded-full bg-white/5">CV
+                                    Diagnostics</span>
+                            </div>
+
+                            <!-- CTA -->
+                            <a href="http://pp.namahgroupindia.com/" target="_blank"
+                                class="inline-flex items-center gap-2 text-white border-b border-blue-500/30 pb-1 text-sm uppercase tracking-widest hover:text-blue-400 hover:border-blue-400 hover:pl-2 transition-all duration-300">
+                                Enter Platform
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-3.5 h-3.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="relative py-32 px-6 border-t border-white/5">
+        <!-- Ambient Light -->
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[150px] pointer-events-none">
+        </div>
+
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="text-center mb-16 fade-up">
+                <span class="text-gold text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">Leadership</span>
+                <h2 class="font-display text-3xl md:text-5xl text-white mb-4">The Visionary Behind Namah</h2>
+                <div class="w-16 h-px bg-gold/50 mx-auto"></div>
+            </div>
+
+            <div class="max-w-3xl mx-auto fade-up delay-100">
+                <div
+                    class="bg-card-bg border border-white/5 backdrop-blur-sm p-8 md:p-12 hover:border-gold/30 transition duration-500 group relative overflow-hidden">
+
+                    <!-- Ambient Glow -->
+                    <div
+                        class="absolute -top-20 -left-20 w-48 h-48 bg-gold/10 rounded-full blur-[80px] pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-0">
+                    </div>
+
+                    <div class="flex flex-col md:flex-row items-center gap-10 relative z-10">
+
+                        <!-- Left: Profile Photo -->
+                        <div class="flex-shrink-0">
+                            <div
+                                class="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-gold/30 overflow-hidden group-hover:border-gold/50 transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(212,175,55,0.15)]">
+                                <img src="./Photo_prof.jpg" alt="Sakshi Varshney — MD & CEO, Namah Group"
+                                    class="w-full h-full object-cover object-center grayscale-[30%] group-hover:grayscale-0 transition-all duration-700" />
+                            </div>
+                        </div>
+
+                        <!-- Right: Bio -->
+                        <div class="flex-1 text-center md:text-left">
+                            <div class="flex items-center gap-3 justify-center md:justify-start mb-2">
+                                <h3 class="font-serif text-3xl md:text-4xl text-white">Sakshi Varshney</h3>
+
+                                <!-- LinkedIn Icon -->
+                                <a href="https://www.linkedin.com/in/sakshi-varshney-8a6a74113/" target="_blank"
+                                    rel="noopener noreferrer" class="linkedin-link" title="Connect on LinkedIn">
+                                    <svg class="w-6 h-6 text-[#0A66C2] hover:text-[#0a66c2]/80" fill="currentColor"
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                    </svg>
+                                </a>
+                            </div>
+
+                            <p class="text-gold/80 text-sm uppercase tracking-[0.2em] font-bold mb-6">Managing Director
+                                & CEO</p>
+
+                            <p class="text-white/60 leading-relaxed font-light text-lg mb-4">
+                                Sakshi Varshney is the founder, Managing Director, and CEO of Namah Group Product &
+                                Services (OPC) Pvt Ltd. A visionary entrepreneur, she leads the company's strategic
+                                direction across its dual pillars of luxury wellness and deep technology.
+                            </p>
+
+                            <p class="text-white/50 leading-relaxed font-light mb-6">
+                                Under her leadership, Namah Group launched Placement Pilot — an AI-powered campus
+                                placement preparation platform — and established Seviorè Wellness as a
+                                science-first botanical luxury brand. Her approach combines
+                                meticulous operational precision with a bold vision for leveraging technology to
+                                democratize access to quality and intelligence.
+                            </p>
+
+                            <!-- LinkedIn CTA -->
+                            <a href="https://www.linkedin.com/in/sakshi-varshney-8a6a74113/" target="_blank"
+                                rel="noopener noreferrer"
+                                class="inline-flex items-center gap-2 text-[#0A66C2] text-sm uppercase tracking-widest hover:text-white transition-all duration-300">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
+                                Connect on LinkedIn
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" class="w-3 h-3">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer / Global Sitemap -->
     <footer id="footer" class="bg-black text-white pt-24 pb-12 px-6 border-t border-white/10">
@@ -103,10 +423,14 @@
                     <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="index.html#wellness" class="hover:text-gold transition-colors">Seviorè Wellness</a>
                         </li>
-                        <li><a href="index.html#quantum" class="hover:text-neon transition-colors">Quantum Systems & Deep Tech</a>
+                        <li><a href="index.html#quantum" class="hover:text-neon transition-colors">Quantum Systems &
+                                Deep Tech</a>
                         </li>
-                        <li><a href="index.html#ai-engines" class="hover:text-blue-400 transition-colors">Enterprise AI Engines</a>
+                        <li><a href="index.html#ai-engines" class="hover:text-blue-400 transition-colors">Enterprise AI
+                                Engines</a>
                         </li>
+                        <li><a href="http://pp.namahgroupindia.com/" target="_blank"
+                                class="hover:text-blue-400 transition-colors">Placement Pilot ↗</a></li>
                     </ul>
                 </div>
 
@@ -148,6 +472,86 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Reveal Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+        // Canvas Particle Animation (Neural Network / Stars Effect)
+        const canvas = document.getElementById('neuralCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.3;
+                this.vy = (Math.random() - 0.5) * 0.3;
+                this.size = Math.random() * 1.5;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0) this.x = width;
+                if (this.x > width) this.x = 0;
+                if (this.y < 0) this.y = height;
+                if (this.y > height) this.y = 0;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < 50; i++) particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach((p, i) => {
+                p.update();
+                p.draw();
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[j].x - p.x;
+                    const dy = particles[j].y - p.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 - dist / 1500})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        initParticles();
+        animate();
+    </script>
 </body>
 
 </html>
